@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Okay, our AI need more details about the {{place}}, so as to better assist you.</p>
+<form method = "POST"  action = "/place/nf/result">
+  <p> Which city are you located in the bay area?</p>
+  <input type = "string" name = "city" value = "Pleasanton">
+  <br>{{city_not_found}}<br>
+  <p> How popular do you want the place to be, more or less?</p>
+  <label for="popularity">Popularity:</label>
+	<select id="popular" name="popularity">
+	  <option value="more">more</option>
+	  <option value="less">less</option>
+	</select>
+  <br><br>
+  {%  if place == 'trail' %}
+	  <p> How difficult do you want the place to be, easy, moderate or hard?</p>
+	  <label for="difficult">Difficulty:</label>
+		<select id="difficult" name="difficulty">
+		  <option value="easy">easy</option>
+		  <option value="moderate">moderate</option>
+		  <option value="moderate">hard</option>
+		</select>
+	  <br><br>
+  {%  endif  %}
+  <p> Do you prefer shade, yes or no?</p>
+  <label for="shade">Shade:</label>
+	<select id="shade" name="shade">
+	  <option value="yes">yes</option>
+	  <option value="no">no</option>
+	</select>
+  <br><br>
+  <p> What kind of features do you like? please enter one only, feel free to use your own word</p>
+  <input type = "string" name = "feature" value = "bird">
+  <br><br>  
+  <p> How far/long are you willing to drive?</p>
+  <input type = "number" name = "distance_time" value = 10>
+  <label for="measure"></label>
+	<select id="measure" name="metric">
+	  <option value="miles">miles</option>
+	  <option value="minutes">minutes</option>
+	</select>
+  <br><br>
+  <input type="submit" value="submit">
+  <br><br>
+</form> 
+
+
+{% endblock %}
+
+
+

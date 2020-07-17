@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <p> Here are the top {{place}}s near your location: </p>
+    {% for top_name in top_names %}
+      <tr>
+        <td> {{loop.index}}. </td>
+        <td> <a href="{{top_name[1]}}">{{top_name[0]}}</a> </td>
+        <td> {{top_name[2]}}</td>
+      </tr> <br>
+    {% endfor %}
+
+{% endblock %}
+

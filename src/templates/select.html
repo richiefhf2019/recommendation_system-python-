@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Okay, please answer the following questions so that we can better assist you.</p>
+<form method ="POST"  action="/place">
+  <p>Do you have a favorite {{place}} in San Francisco bay area?</p>
+    <input type="String" name="YESorNO" list="bool"/>
+      <datalist id = "bool">
+        <select name = "YESorNO">
+          <option> YES </option>
+          <option> NO </option>
+        </select>
+      </datalist>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
+
+
+

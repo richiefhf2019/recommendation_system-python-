@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST" action="/select">
+  <p>Please select the type of places you want to go: </p>
+  <input type="String" name="type" list="place-types"/>
+    <datalist id = "place-types">
+      <select name = "type">
+        <option> Trail </option>
+        <option> Park </option>
+        <option> Gym</option>
+      </select>
+    </datalist>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
+

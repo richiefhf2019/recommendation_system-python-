@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <p> Here's a list of the {{place}}s in the city of {{city}}:</p>
+    {% for place in places_list %}
+      <tr>
+        <td> {{loop.index}}. </td>
+        <td>{{place}}</td>
+      </tr> <br>
+    {% endfor %}
+<form method = "POST"  action = "/place/wf/result">
+  <p> Please select your favorite one:</p>
+  <input type = "number" name = "choice" value = 0>
+  <br>
+  <p> How far/long are you willing to drive?</p>
+  <input type = "number" name = "distance_time" value = 10>
+  <label for="measure"></label>
+  <select id="measure" name="metric">
+    <option value="miles">miles</option>
+    <option value="minutes">minutes</option>
+  </select>
+  <br><br>
+  <input type="submit" value="submit">
+<br>
+</form> 
+
+{% endblock %}
+
+
+

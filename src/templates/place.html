@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if favor == 'YES' %} 
+<p>Okay, which city is your favorite {{place}} located in the bay area?</p>
+<form method="POST" action="/place/wf">
+  <input type="string" name="city" value="Pleasanton">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+{% else %}
+<p> No problem, we will search our database to provide the best place according to your preference </p>
+<form method ="POST"  action="/place/nf">
+  <input type="submit" value="Confirm">
+</form> 
+{% endif %}
+
+{% endblock %}
+
+
+
